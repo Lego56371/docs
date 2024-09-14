@@ -38,7 +38,7 @@ https://ip-address:8080
 
 Run this script
 ```bash
-# For Linux:
+# For Linux with a we server or reverse proxy (like Apache, Nginz, Caddy, Cloudflare Tunnel and else) already in place:
 sudo docker run \
 --init \
 --sig-proxy=false \
