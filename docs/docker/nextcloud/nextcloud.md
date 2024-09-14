@@ -28,3 +28,29 @@ nextcloud/all-in-one:latest
 3. After that you open up your web browser and go to this address
 
 https://ip-address:8080
+
+
+<details>
+
+<summary>Custom start Script</summary>
+
+### Custom Start Script
+
+Run this script
+```bash
+# For Linux:
+sudo docker run \
+--init \
+--sig-proxy=false \
+--name nextcloud-aio-mastercontainer \
+--restart unless-stopped \
+--publish 8080:8080 \
+--env APACHE_PORT=11000 \
+--env APACHE_IP_BINDING=192.168.1.101 \
+--env SKIP_DOMAIN_VALIDATION=true
+--volume nextcloud_aio_mastercontainer:/mnt/docker-aio-config \
+--volume /var/run/docker.sock:/var/run/docker.sock:ro \
+nextcloud/all-in-one:latest
+```
+
+</details>
