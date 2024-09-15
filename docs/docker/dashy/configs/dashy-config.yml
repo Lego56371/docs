@@ -1,0 +1,95 @@
+pageInfo:
+  title: Home Lab
+appConfig:
+  theme: lissy
+  layout: auto
+  iconSize: medium
+sections:
+  - name: Productivity
+    displayData:
+      collapsed: false
+      cols: 2
+    items:
+      - title: Gitea
+        description: Git
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/gitea.svg
+        url: http://192.168.1.207:3000/rcuttriss
+        target: newtab
+        id: 0_1302_gitea
+      - title: Proxmox
+        description: Server Management
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/proxmox.svg
+        url: https://192.168.1.200:8006
+        target: newtab
+        id: 1_1302_proxmox
+      - title: Paperless-NGX
+        description: Document Manager
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/paperless-ngx.svg
+        url: http://192.168.1.239:8000
+        target: newtab
+        id: 2_1302_paperlessngx
+  - name: Network
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    widgets:
+      - type: public-ip
+        id: 0_746_publicip
+  - name: Monitoring
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: Grafana
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/grafana.svg
+        url: http://192.168.1.149:3000
+        target: newtab
+        id: 0_1062_grafana
+      - title: InfluxDB
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/influxdb.svg
+        url: http://192.168.1.149:8086
+        target: newtab
+        id: 1_1062_influxdb
+      - title: Prometheus
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/prometheus.svg
+        url: http://192.168.1.146:9090/graph
+        target: newtab
+        id: 2_1062_prometheus
+  - name: Home Automation
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: Home Assistant
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/home-assistant.svg
+        url: http://192.168.1.231:8123
+        target: newtab
+        id: 0_1482_homeassistant
+      - title: Node-Red
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/node-red.svg
+        url: http://192.168.1.214:1880
+        target: newtab
+        id: 1_1482_nodered
+pages:
+  - displayData:
+      hideForGuests: false
+    name: Home-Lab
+    path: >-
+      https://gist.githubusercontent.com/Lego56371/c6204dc5351f2fb558591dfdd2aa0e9c/raw/67c022092405e0b8f50b7146f1596becd8fe0b43/dashy-config.yml
+  - name: /system
+    path: >-
+      https://gist.githubusercontent.com/Lego56371/70c4b166e46b726dbcd9c653ef8eaf9c/raw/3dca01cbfe5124f6ddff916282d6a8d43aba9c34/system-monitor.yml
+    displayData:
+      hideForGuests: false
