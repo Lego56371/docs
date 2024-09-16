@@ -43,7 +43,7 @@ sudo apt-get update
 2. Run this command in you terminal as well
 
 ```bash
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 ```
 
 3. Run these commands to check the version of Docker that was installed.
