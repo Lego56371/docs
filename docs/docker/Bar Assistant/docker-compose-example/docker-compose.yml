@@ -4,7 +4,7 @@ services:
     environment:
       - MEILI_MASTER_KEY=$MEILI_MASTER_KEY
       - MEILI_ENV=production
-    # Make sure this is unless-stopped
+    #! Make sure this is unless-stopped
     restart: unless-stopped
     volumes:
       - meilisearch_data:/meili_data
@@ -13,7 +13,7 @@ services:
     image: redis
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
-    # Make sure this is unless-stopped
+    #! Make sure this is unless-stopped
     restart: unless-stopped
 
   bar-assistant:
@@ -30,7 +30,7 @@ services:
       - MEILISEARCH_HOST=http://meilisearch:7700 # 
       - REDIS_HOST=redis # 
       - ALLOW_REGISTRATION=true
-    # Make sure this is unless-stopped
+    #! Make sure this is unless-stopped
     restart: unless-stopped
     volumes:
       - bar_data:/var/www/cocktails/storage/bar-assistant
@@ -45,12 +45,12 @@ services:
       - BAR_NAME=$BAR_NAME
       - DESCRIPTION=$BAR_DESCRIPTION
       - DEFAULT_LOCALE=en-US
-    # Make sure this is unless -stopped
+    #! Make sure this is unless -stopped
     restart: unless-stopped
 
   webserver:
     image: nginx:alpine
-    # Make sure this is unless stopped
+    #! Make sure this is unless stopped
     restart: unless-stopped
     depends_on:
       - bar-assistant
