@@ -69,7 +69,7 @@ graph TD;
 
 </detials>
 
-<detail>
+<details>
 
 <summary>Task lists</summary>
 
