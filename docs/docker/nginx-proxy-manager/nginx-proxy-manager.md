@@ -55,3 +55,8 @@ Here is the default username and password
 Email:    admin@example.com
 Password: changeme
 ```
+
+Cloudflare DNS Token
+```
+mc_AgKeUhMXtX7oZqbMfcfEe7ibDvKVFNLPDHZ95
+```
