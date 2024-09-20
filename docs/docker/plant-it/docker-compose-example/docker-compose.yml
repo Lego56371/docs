@@ -6,6 +6,7 @@ services:
     depends_on:
       - db
       - cache
+    #! Made sure this is set to unless stopped
     restart: unless-stopped
     volumes:
       - "./upload-dir:/upload-dir"
@@ -16,7 +17,7 @@ services:
 
   db:
     image: mysql:8.0
-    # Changed this to unless-stopped
+    #! Changed this to unless-stopped
     restart: unless-stopped
     env_file: server.env
     volumes:
@@ -24,4 +25,5 @@ services:
 
   cache:
     image: redis:7.2.1
+    #? Going to leave this to always for the moment
     restart: always
