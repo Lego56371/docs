@@ -8,3 +8,12 @@ $ docker run -d \
     -p 8080:8080 \
     barassistant/salt-rim
 ```
+
+```bash
+$ docker run -d \
+    --name salt-rim \
+    -e API_URL=https://bar-api.ross-cuttriss-tech.tech/bar \
+    -e MEILISEARCH_URL=https://bar-search.ross-cuttriss-tech.tech/search \
+    -p 8080:8080 \
+    barassistant/salt-rim
+```
