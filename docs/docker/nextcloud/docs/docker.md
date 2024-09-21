@@ -36,15 +36,15 @@ https://ip-address:8080
 
 1. Run this script (Not Recommended)
 ```bash
-# For Linux with a we server or reverse proxy (like Apache, Nginz, Caddy, Cloudflare Tunnel and else) already in place:
+# For Linux:
 sudo docker run \
 --init \
 --sig-proxy=false \
 --name nextcloud-aio-mastercontainer \
---restart unless-stopped \
+--restart always \
 --publish 8080:8080 \
---env APACHE_PORT=11005 \
---env APACHE_IP_BINDING=192.168.1.101 \
+--env APACHE_PORT=8443 \
+--env APACHE_IP_BINDING=0.0.0.0 \
 --env SKIP_DOMAIN_VALIDATION=true \
 --volume nextcloud_aio_mastercontainer:/mnt/docker-aio-config \
 --volume /var/run/docker.sock:/var/run/docker.sock:ro \
