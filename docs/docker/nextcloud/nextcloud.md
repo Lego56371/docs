@@ -65,3 +65,7 @@ If no `nextcloud-aio` volumes are listed, you can proceed with the steps below. 
 sudo docker image prune -a
 ```
 13. And you are done! Now feel free to start over with the recommended docker run command!
+
+```
+freefall squatter kudos grudging graduate easel armchair public
+```
