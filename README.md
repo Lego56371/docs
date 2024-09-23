@@ -13,6 +13,9 @@
     |@@@@P
 ```
 
+<details>
+
+<summary>Markdown Testing</summary>
 Testing a table
 
 | First Header | Second Header |
@@ -65,3 +68,5 @@ graph TD;
 - [ ] Add delight to the experience when all tasks are complete :tada:
 
 </detials>
+
+</details>
