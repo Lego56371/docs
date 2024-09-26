@@ -1,5 +1,22 @@
 # Docs
 
+## Mounting a SMB share in linux
+
+First run this command to install and update all packages
+```bash
+sudo apt update && sudo apt upgrade
+```
+
+Then run this command to install the packages needed to install the smb share packages
+```bash
+sudo apt install cifs-utils psmisc
+```
+
+Then run this command to mount the chares
+```bash
+mount -t cifs -o username=user_name //server_name/share_name /mnt/
+```
+
 ```bash
      __
     |@@@g_
