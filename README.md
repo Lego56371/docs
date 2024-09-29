@@ -1,5 +1,10 @@
 # Docs
 
+Token for n8n
+```
+21GRvokHPo7X6j4VB7rM1oYMk0vdgVQGwKu2RTyBMLeFXLvW2F5f0EjtbQXQ4GZM
+```
+
 ## Mounting a SMB share in linux
 
 First run this command to install and update all packages
