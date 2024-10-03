@@ -24,3 +24,7 @@ TrueCommand on Docker Hub
 
 
 The username and password for the VM images are both “truecommand”
+
+```
+https://hooks.slack.com/services/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
+```
