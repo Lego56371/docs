@@ -4,17 +4,21 @@
 
 1. We need to create a directory for our docker container
 ```bash
-mkdir puter && cd puter
+mkdir -p puter/config puter/data
 ```
 
 2. Now we need to create a docker-compose.yml
 ```bash
-touch docker-compose.yml
+sudo chown -R 1000:1000 puter
+```
+
+```bash
+mkdir puter && cd puter
 ```
 
 3. Now we need to edit the docker-compose.yml
 ```bash
-nano docker-compose.yml
+wget https://raw.githubusercontent.com/HeyPuter/puter/main/docker-compose.yml
 ```
 
 4. Now we need to add the contents to the docker-compose.yml
@@ -50,3 +54,4 @@ services:
 ```bash
 sudo docker compose up -d
 ```
+
