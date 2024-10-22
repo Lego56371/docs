@@ -22,7 +22,7 @@ curl -sfL https://get.k3s.io | K3S_TOKEN=SECRET sh -s - server \
 ```
 
 
-Edit this file on loadbalancer-1 and 2 /etc/haproxy/haproxy.cfg
+Edit this file on loadbalancer-1 and 2 '/etc/haproxy/haproxy.cfg'
 ```cfg
 frontend k3s-frontend
     bind *:6443
@@ -39,3 +39,31 @@ backend k3s-backend
     server server-2 10.0.0.199.51:6443 check
     server server-3 10.0.0.200:6443 check
 ```
+
+Add the following to this file '/etc/keepalived/keepalived.conf' on both loadbalancers as well
+```conf
+global_defs {
+  enable_script_security
+  script_user root
+}
+
+vrrp_script chk_haproxy {
+    script 'killall -0 haproxy' # faster than pidof
+    interval 2
+}
+
+vrrp_instance haproxy-vip {
+    interface eth1
+    state <STATE> # MASTER on lb-1, BACKUP on lb-2
+    priority <PRIORITY> # 200 on lb-1, 100 on lb-2
+
+    virtual_router_id 51
+
+    virtual_ipaddress {
+        10.0.3.1/24
+    }
+
+    track_script {
+        chk_haproxy
+    }
+}
