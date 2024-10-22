@@ -67,3 +67,9 @@ vrrp_instance haproxy-vip {
         chk_haproxy
     }
 }
+```
+
+Run this script on the agents
+```bash
+curl -sfL https://get.k3s.io | K3S_TOKEN=SECRET sh -s - agent --server https://10.0.0.203:6443
+```
