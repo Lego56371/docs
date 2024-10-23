@@ -1,6 +1,6 @@
 # Docker on Ubuntu Server
 
-### Installtion
+### Installation
 
 Start with a fresh Ubuntu Server install with nothing extra installed on it
 
