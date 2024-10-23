@@ -77,7 +77,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "69910d0f7c412f9f",
@@ -164,6 +165,8 @@
   },
   "active": "b86b7487da815e85",
   "lastOpenFiles": [
+    "docs/kubernetes/k8s/Master.md",
+    "docs/kubernetes/k8s",
     "docs/linux/software/grafana/grafana.md",
     "docs/linux/ubuntu/docker/docker-on-ubuntu-server.md",
     "docs/linux/software/grafana"
