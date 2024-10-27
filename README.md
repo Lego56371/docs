@@ -35,6 +35,9 @@ mount -t cifs -o username=user_name //server_name/share_name /mnt/
     |@@@@P
 ```
 
+<details>
+
+<summary>Markdown Testing</summary>
 Testing a table
 
 | First Header | Second Header |
