@@ -22,45 +22,17 @@
             }
           },
           {
-            "id": "b86b7487da815e85",
+            "id": "b942b2e546dae27d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/docker/nextcloud/docs/docker.md",
+                "file": "docs/linux/software/casaos/casaos-installation.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "docker"
-            }
-          },
-          {
-            "id": "00197084656ddc6e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/docker/nextcloud/docs/docker-compose.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "docker-compose"
-            }
-          },
-          {
-            "id": "9b3ab71c4ae62cb4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/docker/wireguard/wireguard-install.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "wireguard-install"
+              "title": "casaos-installation"
             }
           }
         ]
@@ -207,29 +179,36 @@
   },
   "active": "5f9e79f75e4f20b4",
   "lastOpenFiles": [
-    "docs/docker/wireguard/wireguard-install.md",
+    "docs/linux/software/casaos/casaos-installation.md",
+    "docs/docker/paperless-ngx/docker-compose.env",
+    "docs/docker/paperless-ngx/docker-compose.yml",
+    "docs/docker/paperless-ngx",
     "docs/linux/ubuntu/docker/docker-on-ubuntu-server.md",
-    "docs/docker/nextcloud/docs/cloudflare-tunnel.md",
-    "docs/docker/wireguard",
-    "docs/docker/nextcloud/docs/docker-compose.md",
     "docs/docker/nextcloud/docs/docker.md",
-    "docs/docker/nextcloud/nextcloud.md",
-    "docs/docker/mariadb/mariadb-install.md",
-    "docs/docker/grafana/loki/loki-install.md",
-    "docs/docker/mariadb",
-    "docs/docker/grafana/promtail/docker-compose.yml",
-    "docs/docker/grafana/promtail",
-    "docs/docker/grafana/loki/docker-compose.yml",
+    "docs/linux/software/casaos",
+    "docs/linux/software/terraform/terraform.md",
+    "docs/linux/software/terraform",
+    "docs/linux/software/grafana/grafana.md",
+    "docs/linux/software/grafana",
     "docs/kubernetes/microk8s/microk8s-install.md",
-    "docs/docker/mealie/mealie.md",
-    "docs/docker/wordpress/wordpress-install.md",
-    "docs/docker/wordpress",
-    "docs/docker/castopod/castopod-install.md",
-    "docs/docker/castopod",
     "docs/kubernetes/microk8s/cluster.md",
     "docs/kubernetes/k8s/Master.md",
+    "docs/kubernetes/k3s/nginx.conf",
+    "docs/kubernetes/k3s/HA-k3s-Cluster.md",
+    "docs/kubernetes/microk8s",
     "docs/kubernetes/k8s",
-    "docs/linux/software/grafana/grafana.md",
-    "docs/linux/software/grafana"
+    "docs/kubernetes/k3s",
+    "docs/docker/wordpress/wordpress-install.md",
+    "docs/docker/wireguard/wireguard-install.md",
+    "docs/docker/truecommand/truecommand.md",
+    "docs/docker/portainer/portainer.md",
+    "docs/docker/pi-hole/pi-hole.md",
+    "docs/docker/nextcloud/docs/cloudflare-tunnel.md",
+    "docs/docker/mariadb/mariadb-install.md",
+    "docs/docker/grafana/loki/loki-install.md",
+    "docs/docker/castopod/castopod-install.md",
+    "docs/docker/nextcloud/docs/docker-compose.md",
+    "docs/docker/nextcloud/nextcloud.md",
+    "docs/docker/mealie/mealie.md"
   ]
 }
