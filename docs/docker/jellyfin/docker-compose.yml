@@ -8,14 +8,17 @@ services:
       - /home/rtech-local/jellyfin/config:/config
       - /home/rtech-local/jellyfin/cache:/cache
       - type: bind
-        source: /home/rtech-local/media
+        source: /home/rtech-local/media/media
         target: /media
-        read_only: false
       - type: bind
-        source: /home/rtech-local/media2
+        source: /home/rtech-local/media/podcast
         target: /media2
-        read_only: false
-    #! Made sure this is set to unless stopped
+        read_only: true
+      # Optional - extra fonts to be used during transcoding with subtitle burn-in
+      - type: bind
+        source: /path/to/fonts
+        target: /usr/local/share/fonts/custom
+        read_only: true
     restart: 'unless-stopped'
     # Optional - alternative address used for autodiscovery
     environment:
