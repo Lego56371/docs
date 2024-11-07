@@ -49,7 +49,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 # MAKE SURE YOU RUN THIS
 
 ```bash
-sudo usermod -aG docker $USER
+sudo usermod -aG docker rtech-local
 sudo reboot
 ```
 
