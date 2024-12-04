@@ -1,50 +1,52 @@
 # Docs
 
 ```yml
-# sonarr
-Sonarr:
+# Radarr
+services:
+  radarr:
+    container_name: radarr
+    image: ghcr.io/hotio/radarr
+    ports:
+      - "7878:7878"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - UMASK=002
+      - TZ=Etc/UTC
+    volumes:
+      - /<host_folder_config>:/config
+      - /<host_folder_data>:/data
+
+# Sonarr
+services:
+  sonarr:
+    container_name: sonarr
     image: ghcr.io/hotio/sonarr
-    volumes:
-        - /path/to/config/sonarr:/config
-        - /host/data:/data
+    ports:
+      - "8989:8989"
     environment:
-        - PUID=111
-        - PGID=321
-        - UMASK=002
-
-# deluge
-Deluge:
-    image: binhex/arch-delugevpn
+      - PUID=1000
+      - PGID=1000
+      - UMASK=002
+      - TZ=Etc/UTC
     volumes:
-        - /path/to/config/deluge:/config
-        - /host/data/torrents:/data/torrents
-    environment:
-        - PUID=222
-        - PGID=321
-        - UMASK=002
+      - /<host_folder_config>:/config
+      - /<host_folder_data>:/data
 
-# SABnzbd
-SABnzbd:
-    image: ghcr.io/hotio/sabnzbd
+# Prowlarr
+services:
+  prowlarr:
+    container_name: prowlarr
+    image: ghcr.io/hotio/prowlarr
+    ports:
+      - "9696:9696"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - UMASK=002
+      - TZ=Etc/UTC
     volumes:
-        - /path/to/config/sabnzbd:/config
-        - /host/data/usenet:/data/usenet
-    environment:
-        - PUID=333
-        - PGID=321
-        - UMASK=002
-
-# plex
-Plex:
-    image: ghcr.io/hotio/plex
-    volumes:
-        - /path/to/config/plex:/config
-        - /host/data/media:/data/media
-
-    environment:
-        - PUID=444
-        - PGID=321
-        - UMASK=002
+      - /<host_folder_config>:/config
 ```
 
 
