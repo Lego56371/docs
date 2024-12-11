@@ -46,6 +46,13 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 ```
 
+# MAKE SURE YOU RUN THIS
+
+```bash
+sudo usermod -aG docker rtech-local
+sudo reboot
+```
+
 3. Run these commands to check the version of Docker that was installed.
 ```bash
 docker compose version
