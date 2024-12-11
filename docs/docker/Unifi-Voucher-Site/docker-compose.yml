@@ -1,0 +1,69 @@
+version: '3'
+services:
+  app:
+    image: glenndehaan/unifi-voucher-site:latest
+    ports:
+      - "3000:3000"
+    environment:
+      # The IP address to your UniFi OS Console
+      UNIFI_IP: '10.0.0.35'
+      # The port of your UniFi OS Console, this could be 443 or 8443
+      UNIFI_PORT: 8443
+      # The username of a local UniFi OS account
+      UNIFI_USERNAME: 'unifi-voucher'
+      # The password of a local UniFi OS account
+      UNIFI_PASSWORD: 'Team-1501-Thrust'
+      # The UniFi Site ID
+      UNIFI_SITE_ID: 'Homelab'
+      # The UniFi SSID where guests need to connect to (Used within templating and 'Scan to Connect')
+      UNIFI_SSID: 'RTECH-Guest'
+      # The UniFi SSID WPA/WPA2/WPA3 Password (Can be ignored for 'Open' networks) (Used within templating and 'Scan to Connect')
+      UNIFI_SSID_PASSWORD: 'Saxophone#1'
+      # Toggle to enable/disable internal authentication
+      AUTH_INTERNAL_ENABLED: 'true'
+      # The password used to log in to the voucher portal Web UI
+      AUTH_INTERNAL_PASSWORD: 'B105'
+      # The Bearer token used for the API
+      AUTH_INTERNAL_BEARER_TOKEN: 'qEP1AE01CCLUoTGt3ZJBcXwIIu8HsaGI'
+      # Toggle to enable/disable OIDC authentication
+      AUTH_OIDC_ENABLED: 'false'
+      # OIDC issuer base url provided by oauth provider. Example: https://auth.example.com/.well-known/openid-configuration
+      AUTH_OIDC_ISSUER_BASE_URL: ''
+      # OIDC UniFi Voucher base url (This application). Example: https://voucher.example.com
+      AUTH_OIDC_APP_BASE_URL: ''
+      # OIDC client id provided by oauth provider
+      AUTH_OIDC_CLIENT_ID: ''
+      # OIDC client secret provided by oauth provider
+      AUTH_OIDC_CLIENT_SECRET: ''
+      # Disables the login/authentication for the portal and API
+      AUTH_DISABLE: 'false'
+      # Voucher Types, format: expiration in minutes (required),single-use or multi-use vouchers value - '0' is for multi-use - '1' is for single-use (optional),upload speed limit in kbps (optional),download speed limit in kbps (optional),data transfer limit in MB (optional)
+      # To skip a parameter just but nothing in between the comma's
+      # After a voucher type add a semicolon, after the semicolon you can start a new voucher type
+      VOUCHER_TYPES: '480,1,1501,85,5;'
+      # Allow users to create custom vouchers types within the UI
+      VOUCHER_CUSTOM: 'true'
+      # Enable/disable the Web UI
+      SERVICE_WEB: 'true'
+      # Enable/disable the API
+      SERVICE_API: 'false'
+      # Enable/disable the printer and set the preferred type, currently supported types: pdf, escpos
+      PRINTER_TYPE: ''
+      # IP address to your network enabled ESC/POS compatible printer (Only required when using PRINTER_TYPE: 'escpos')
+      PRINTER_IP: '192.168.1.1'
+      # SMTP Mail from email address (optional)
+      SMTP_FROM: 'RTECH-GUEST@wifi.rtech.org'
+      # SMTP Mail server hostname/ip (optional)
+      SMTP_HOST: '10.0.1.18'
+      # SMTP Mail server port (optional)
+      SMTP_PORT: '2525'
+      # SMTP Mail use TLS? (optional)
+      SMTP_SECURE: 'false'
+      # SMTP Mail username (optional)
+      SMTP_USERNAME: ''
+      # SMTP Mail password (optional)
+      SMTP_PASSWORD: ''
+      # Sets the application Log Level (Valid Options: error|warn|info|debug|trace)
+      LOG_LEVEL: 'info'
+      # Enables/disables translation debugging, when enabled only translation keys are shown
+      TRANSLATION_DEBUG: 'false'
