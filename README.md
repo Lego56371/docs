@@ -1,5 +1,45 @@
 # Docs
 
+<details>
+
+<summary>Full Storage</summary>
+
+289
+
+Had the exact same problem with a fresh install of Ubuntu Server 18.04.1.
+
+What I had to do was:
+
+# We need to resize the logical volume to use all the existing and free space of the volume group
+$ lvm
+lvm> lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+lvm> exit
+
+# And then, we need to resize the file system to use the new available space in the logical volume
+$ resize2fs /dev/ubuntu-vg/ubuntu-lv
+resize2fs 1.44.1 (24-Mar-2018)
+Filesystem at /dev/ubuntu-vg/ubuntu-lv is mounted on /; on-line resizing required
+old_desc_blocks = 1, new_desc_blocks = 58
+The filesystem on /dev/ubuntu-vg/ubuntu-lv is now 120784896 (4k) blocks long.
+
+# Finally, you can check that you now have available space:
+$ df -h
+Filesystem                         Size  Used Avail Use% Mounted on
+udev                               3.9G     0  3.9G   0% /dev
+tmpfs                              786M  1.2M  785M   1% /run
+/dev/mapper/ubuntu--vg-ubuntu--lv  454G  3.8G  432G   1% /
+If you didn't customize the LVM settings, the names for the volume group and logical volume should be the same as mine (ubuntu-vg and ubuntu-lv respectively).
+
+If your partition is completely full, you could get a no space left error when trying to resize the logical volume like:
+
+lvm> lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+  /etc/lvm/archive/.lvm_computer: write error failed: No space left on device
+The easiest way to fix this is by removing apt cache (it will get regenerated next time you do apt update), which should give you more than enough space to complete the operation:
+
+$ rm -rf /var/cache/apt/*
+
+</details>
+
 ```yml
 # Radarr
 services:
