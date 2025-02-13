@@ -11,12 +11,18 @@ Had the exact same problem with a fresh install of Ubuntu Server 18.04.1.
 What I had to do was:
 
 # We need to resize the logical volume to use all the existing and free space of the volume group
-$ lvm
-lvm> lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
-lvm> exit
+```bash
+lvm
+```
+```bash
+lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+```
+```bash
+exit
+```
 
 # And then, we need to resize the file system to use the new available space in the logical volume
-$ resize2fs /dev/ubuntu-vg/ubuntu-lv
+resize2fs /dev/ubuntu-vg/ubuntu-lv
 resize2fs 1.44.1 (24-Mar-2018)
 Filesystem at /dev/ubuntu-vg/ubuntu-lv is mounted on /; on-line resizing required
 old_desc_blocks = 1, new_desc_blocks = 58
