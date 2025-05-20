@@ -2,24 +2,6 @@
 
 ### Installation
 
-Start with a fresh Ubuntu Server install with nothing extra installed on it
-
-Then you are going to want to create a new user. Replace ** with the user
-```bash
-sudo adduser rcuttriss
-```
-
-Then give the user admin permissions. Replace the ** with the user
-```bash
-sudo usermod -a -G sudo rcuttriss
-```
-
-Now switch to the user. Replace the ** with the user
-```bash
-su -l rcuttriss
-```
-
-
 Next start to install Docker
 
 1. Run this command in your ubuntu server terminal
